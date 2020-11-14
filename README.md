@@ -1,4 +1,6 @@
 [![](https://i.imgur.com/UelUjKAh.png)](#)
+• THIS FORK ACTUALLY ONLY FOR COMMA EON -- NOT COMMA TWO
+• Use Branch RELEASE2 only.
 
 Table of Contents -- Eon Grey Panda/Stealth Final Version
 =======================

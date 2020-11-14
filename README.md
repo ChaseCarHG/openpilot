@@ -27,7 +27,9 @@ What is this fork?
 
 This particular fork was designed specifically for the Eon with the Grey Panda installed in stealth mode. Since subsequent versions deprecated the Grey Panda pushing upgrades to Comma Two or Black Panda, this version fixes the software for the Eon and Grey Panda. 
 This fork also relaxes nighttime wheel nag significantly, as 0.7.10 made nighttime wheel nag every 30 seconds.
-Finally, this fork disables updates, as it is intended to be a final version.
+Finally, this fork disables updates, as it is intended to be a final version. 
+
+ONLY the Release2 branch was modified, and only for those above particular changes. Use of other branches is not recommended (at all).
 
 What is openpilot?
 ------

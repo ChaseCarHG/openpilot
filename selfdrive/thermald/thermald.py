@@ -36,9 +36,9 @@ NetworkType = log.ThermalData.NetworkType
 NetworkStrength = log.ThermalData.NetworkStrength
 CURRENT_TAU = 15.   # 15s time constant
 CPU_TEMP_TAU = 5.   # 5s time constant
-DAYS_NO_CONNECTIVITY_MAX = 7  # do not allow to engage after a week without internet
-DAYS_NO_CONNECTIVITY_PROMPT = 4  # send an offroad prompt after 4 days with no internet
-DISCONNECT_TIMEOUT = 5.  # wait 5 seconds before going offroad after disconnect so you get an alert
+DAYS_NO_CONNECTIVITY_MAX = 997  # do not allow to engage after a week without internet, was 7
+DAYS_NO_CONNECTIVITY_PROMPT = 994  # send an offroad prompt after 4 days with no internet, was 4
+DISCONNECT_TIMEOUT = 995.  # wait 5 seconds before going offroad after disconnect so you get an alert, was 5
 
 prev_offroad_states: Dict[str, Tuple[bool, Optional[str]]] = {}
 
@@ -327,26 +327,26 @@ def thermald_thread():
 
     if update_failed_count > 15 and last_update_exception is not None:
       if current_branch in ["release2", "dashcam"]:
-        extra_text = "Ensure the software is correctly installed"
+        #extra_text = "Ensure the software is correctly installed"
       else:
-        extra_text = last_update_exception
+        #extra_text = last_update_exception
 
-      set_offroad_alert_if_changed("Offroad_ConnectivityNeeded", False)
-      set_offroad_alert_if_changed("Offroad_ConnectivityNeededPrompt", False)
-      set_offroad_alert_if_changed("Offroad_UpdateFailed", True, extra_text=extra_text)
+      #set_offroad_alert_if_changed("Offroad_ConnectivityNeeded", False)
+      #set_offroad_alert_if_changed("Offroad_ConnectivityNeededPrompt", False)
+      #set_offroad_alert_if_changed("Offroad_UpdateFailed", True, extra_text=extra_text)
     elif dt.days > DAYS_NO_CONNECTIVITY_MAX and update_failed_count > 1:
-      set_offroad_alert_if_changed("Offroad_UpdateFailed", False)
-      set_offroad_alert_if_changed("Offroad_ConnectivityNeededPrompt", False)
-      set_offroad_alert_if_changed("Offroad_ConnectivityNeeded", True)
+      #set_offroad_alert_if_changed("Offroad_UpdateFailed", False)
+      #set_offroad_alert_if_changed("Offroad_ConnectivityNeededPrompt", False)
+      #set_offroad_alert_if_changed("Offroad_ConnectivityNeeded", True)
     elif dt.days > DAYS_NO_CONNECTIVITY_PROMPT:
-      remaining_time = str(max(DAYS_NO_CONNECTIVITY_MAX - dt.days, 0))
-      set_offroad_alert_if_changed("Offroad_UpdateFailed", False)
-      set_offroad_alert_if_changed("Offroad_ConnectivityNeeded", False)
-      set_offroad_alert_if_changed("Offroad_ConnectivityNeededPrompt", True, extra_text=f"{remaining_time} days.")
+      #remaining_time = str(max(DAYS_NO_CONNECTIVITY_MAX - dt.days, 0))
+      #set_offroad_alert_if_changed("Offroad_UpdateFailed", False)
+      #set_offroad_alert_if_changed("Offroad_ConnectivityNeeded", False)
+      #set_offroad_alert_if_changed("Offroad_ConnectivityNeededPrompt", True, extra_text=f"{remaining_time} days.")
     else:
-      set_offroad_alert_if_changed("Offroad_UpdateFailed", False)
-      set_offroad_alert_if_changed("Offroad_ConnectivityNeeded", False)
-      set_offroad_alert_if_changed("Offroad_ConnectivityNeededPrompt", False)
+      #set_offroad_alert_if_changed("Offroad_UpdateFailed", False)
+      #set_offroad_alert_if_changed("Offroad_ConnectivityNeeded", False)
+      #set_offroad_alert_if_changed("Offroad_ConnectivityNeededPrompt", False)
 
     startup_conditions["not_uninstalling"] = not params.get("DoUninstall") == b"1"
     startup_conditions["accepted_terms"] = params.get("HasAcceptedTerms") == terms_version

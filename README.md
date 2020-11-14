@@ -1,6 +1,6 @@
 [![](https://i.imgur.com/UelUjKAh.png)](#)
 
-Table of Contents
+Table of Contents -- Eon Grey Panda/Stealth Final Version
 =======================
 
 * [What is this fork?](#what-is-this-fork)

@@ -311,7 +311,9 @@ def fetch_update(wait_helper: WaitTimeHelper) -> bool:
 
 def main():
   params = Params()
-
+  
+  raise RuntimeError("Eon Stealth Final: Updates disabled.")
+  
   if params.get("DisableUpdates") == b"1":
     raise RuntimeError("updates are disabled by the DisableUpdates param")
 

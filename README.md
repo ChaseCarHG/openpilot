@@ -3,6 +3,7 @@
 Table of Contents
 =======================
 
+* [What is this fork?](#what-is-this-fork)
 * [What is openpilot?](#what-is-openpilot)
 * [Integration with Stock Features](#integration-with-stock-features)
 * [Supported Hardware](#supported-hardware)
@@ -20,6 +21,13 @@ Table of Contents
 * [Licensing](#licensing)
 
 ---
+
+What is this fork?
+------
+
+This particular fork was designed specifically for the Eon with the Grey Panda installed in stealth mode. Since subsequent versions deprecated the Grey Panda pushing upgrades to Comma Two or Black Panda, this version fixes the software for the Eon and Grey Panda. 
+This fork also relaxes nighttime wheel nag significantly, as 0.7.10 made nighttime wheel nag every 30 seconds.
+Finally, this fork disables updates, as it is intended to be a final version.
 
 What is openpilot?
 ------
@@ -58,6 +66,8 @@ Supported Hardware
 ------
 
 At the moment, openpilot supports the [EON DevKit](https://comma.ai/shop/products/eon-dashcam-devkit) and the [comma two](https://comma.ai/shop/products/comma-two-devkit). A [car harness](https://comma.ai/shop/products/car-harness) is recommended to connect the EON or comma two to the car. For experimental purposes, openpilot can also run on an Ubuntu computer with external [webcams](https://github.com/commaai/openpilot/tree/master/tools/webcam).
+
+However, this particular fork was designed specifically for the Eon with the Grey Panda installed in stealth mode. Since subsequent versions deprecated the Grey Panda pushing upgrades to Comma Two or Black Panda, this version fixes the software for the Eon and Grey Panda. It also relaxes nighttime wheel nag significantly, as 0.7.10 made nighttime wheel nag every 30 seconds.
 
 Supported Cars
 ------

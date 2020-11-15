@@ -373,7 +373,7 @@ EVENTS: Dict[int, Dict[str, Union[Alert, Callable[[Any, messaging.SubMaster, boo
       "KEEP EYES ON ROAD",
       "Driver Distracted",
       AlertStatus.userPrompt, AlertSize.mid,
-      Priority.MID, VisualAlert.steerRequired, AudibleAlert.chimeWarning2Repeat, .1, .1, .1),
+      Priority.MID, VisualAlert.steerRequired, AudibleAlert.chimeWarning2Repeat, .1, .1, .1, creation_delay=10),
   },
 
   EventName.driverDistracted: {
@@ -413,7 +413,7 @@ EVENTS: Dict[int, Dict[str, Union[Alert, Callable[[Any, messaging.SubMaster, boo
       "CHECK DRIVER FACE VISIBILITY",
       "Driver Monitoring Uncertain",
       AlertStatus.normal, AlertSize.small,
-      Priority.LOW, VisualAlert.none, AudibleAlert.none, .4, 0., 10),
+      Priority.LOW, VisualAlert.none, AudibleAlert.none, .4, 0., 10, creation_delay=170),
   },
 
   EventName.manualRestart: {
